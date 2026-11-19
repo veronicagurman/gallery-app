@@ -21,5 +21,7 @@
 			</array>
 		</dict>
 	</dict>
+	<key>UnsplashAccessKey</key>
+	<string>$(UNSPLASH_ACCESS_KEY)</string>
 </dict>
 </plist>
