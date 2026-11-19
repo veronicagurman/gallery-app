@@ -28,6 +28,8 @@
 		4A06B62830AE3455003A01D2 /* GalleryAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GalleryAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A06B63230AE3455003A01D2 /* GalleryAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GalleryAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A06B65C30AE3D08003A01D2 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		4AAC675030AF911700FB34B2 /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = "<group>"; };
+		4AAC675130AF911700FB34B2 /* Secrets.example.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.example.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -89,6 +91,7 @@
 		4A06B60930AE3454003A01D2 = {
 			isa = PBXGroup;
 			children = (
+				4AAC675230AF911700FB34B2 /* Config */,
 				4A06B65C30AE3D08003A01D2 /* .swiftlint.yml */,
 				4A06B61430AE3454003A01D2 /* GalleryApp */,
 				4A06B62B30AE3455003A01D2 /* GalleryAppTests */,
@@ -105,6 +108,15 @@
 				4A06B63230AE3455003A01D2 /* GalleryAppUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		4AAC675230AF911700FB34B2 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				4AAC675030AF911700FB34B2 /* Secrets.xcconfig */,
+				4AAC675130AF911700FB34B2 /* Secrets.example.xcconfig */,
+			);
+			path = Config;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -309,6 +321,7 @@
 /* Begin XCBuildConfiguration section */
 		4A06B63C30AE3455003A01D2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4AAC675030AF911700FB34B2 /* Secrets.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -342,6 +355,7 @@
 		};
 		4A06B63D30AE3455003A01D2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4AAC675030AF911700FB34B2 /* Secrets.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
