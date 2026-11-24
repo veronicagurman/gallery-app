@@ -42,15 +42,22 @@ final class PhotoDetailViewController: UIViewController {
 
     private func setupFavoriteButton() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(
-            image: UIImage(systemName: "star"),
+            image: favoriteImage(isFavorite: viewModel.isFavorite),
             style: .plain,
             target: self,
             action: #selector(favoriteTapped)
         )
+        viewModel.onFavoriteChange = { [weak self] isFavorite in
+            self?.navigationItem.rightBarButtonItem?.image = self?.favoriteImage(isFavorite: isFavorite)
+        }
     }
 
     @objc private func favoriteTapped() {
-      
+        viewModel.toggleFavorite()
+    }
+
+    private func favoriteImage(isFavorite: Bool) -> UIImage? {
+        UIImage(systemName: isFavorite ? "star.fill" : "star")
     }
 
     private func setupLayout() {
