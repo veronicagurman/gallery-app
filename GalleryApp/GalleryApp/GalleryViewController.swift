@@ -82,4 +82,14 @@ extension GalleryViewController: UICollectionViewDelegateFlowLayout {
             viewModel.loadNextPage()
         }
     }
+
+    func collectionView(
+        _ collectionView: UICollectionView,
+        didSelectItemAt indexPath: IndexPath
+    ) {
+        let photo = viewModel.photos[indexPath.item]
+        let detailViewModel = PhotoDetailViewModel(photo: photo)
+        let detailViewController = PhotoDetailViewController(viewModel: detailViewModel)
+        navigationController?.pushViewController(detailViewController, animated: true)
+    }
 }
