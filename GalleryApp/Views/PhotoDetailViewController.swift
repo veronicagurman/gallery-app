@@ -124,7 +124,6 @@ final class PhotoDetailViewController: UIViewController {
         loadTask = Task { [weak self] in
             guard let self else { return }
 
-           
             if let small = await ImageLoader.shared.load(from: viewModel.placeholderURLString) {
                 guard !Task.isCancelled else { return }
                 show(small)
