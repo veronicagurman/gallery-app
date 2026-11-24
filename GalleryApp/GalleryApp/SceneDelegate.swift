@@ -16,8 +16,28 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         willConnectTo session: UISceneSession,
         options connectionOptions: UIScene.ConnectionOptions
     ) {
- 
         guard scene is UIWindowScene else { return }
+        guard let galleryNavigation = window?.rootViewController as? UINavigationController else { return }
+
+        galleryNavigation.tabBarItem = UITabBarItem(
+            title: "Gallery",
+            image: UIImage(systemName: "photo.on.rectangle"),
+            tag: 0
+        )
+
+        let favoritesNavigation = UINavigationController(
+            rootViewController: FavoritesViewController()
+        )
+        favoritesNavigation.tabBarItem = UITabBarItem(
+            title: "Favorites",
+            image: UIImage(systemName: "star"),
+            tag: 1
+        )
+
+        let tabBarController = UITabBarController()
+        window?.rootViewController = nil
+        tabBarController.viewControllers = [galleryNavigation, favoritesNavigation]
+        window?.rootViewController = tabBarController
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
