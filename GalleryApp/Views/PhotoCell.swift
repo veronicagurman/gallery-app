@@ -27,10 +27,14 @@ final class PhotoCell: UICollectionViewCell {
     }
 
     func configure(with photo: UnsplashPhoto) {
+        configure(withURL: photo.urls.small)
+    }
+
+    func configure(withURL urlString: String) {
         loadTask?.cancel()
         imageView.image = nil
         loadTask = Task { [weak self] in
-            let image = await ImageLoader.shared.load(from: photo.urls.small)
+            let image = await ImageLoader.shared.load(from: urlString)
             guard !Task.isCancelled else { return }
             self?.imageView.image = image
         }
