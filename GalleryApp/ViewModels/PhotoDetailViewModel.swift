@@ -7,8 +7,12 @@ final class PhotoDetailViewModel {
         self.photo = photo
     }
     
-    var imageURL: URL? {
-        URL(string: photo.urls.regular)
+    var imageURLString: String {
+        photo.urls.regular
+    }
+
+    var placeholderURLString: String {
+        photo.urls.small
     }
     
     var authorText: String {
